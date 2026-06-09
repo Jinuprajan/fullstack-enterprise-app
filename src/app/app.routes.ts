@@ -1,28 +1,47 @@
 import { Routes } from '@angular/router';
+import { APP_ROUTES } from './core/constants/routes.constants';
 
 export const routes: Routes = [
+
   {
-    path: '',
+    path: APP_ROUTES.HOME,
+
     loadComponent: () =>
-      import('./features/home/home/home').then(m => m.Home)
+      import('./features/home/home/home')
+      .then(m => m.Home)
   },
+
+
   {
-    path: 'dashboard',
+    path: APP_ROUTES.DASHBOARD,
+
     loadComponent: () =>
-      import('./features/dashboard/dashboard/dashboard').then(m => m.Dashboard)
+      import('./features/dashboard/dashboard/dashboard')
+      .then(m => m.Dashboard)
   },
+
+
   {
-    path: 'login',
+    path: APP_ROUTES.LOGIN,
+
     loadComponent: () =>
-      import('./features/auth/login/login/login').then(m => m.Login)
+      import('./features/auth/login/login/login')
+      .then(m => m.Login)
   },
+
+
   {
-    path: 'register',
+    path: APP_ROUTES.REGISTER,
+
     loadComponent: () =>
-      import('./features/auth/register/register/register').then(m => m.Register)
+      import('./features/auth/register/register/register')
+      .then(m => m.Register)
   },
+
+
   {
     path: '**',
-    redirectTo: ''
+    redirectTo: APP_ROUTES.HOME
   }
+
 ];
