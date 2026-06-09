@@ -3,6 +3,20 @@
 
   <h2>Enterprise App</h2>
 
+  @if(authService.getUsername()) {
+
+  <p>
+    Welcome, {{ authService.getUsername() }}
+  </p>
+
+}
+@else {
+
+  <p>
+    Guest User
+  </p>
+
+}
   <div class="nav-links">
 
     <a
